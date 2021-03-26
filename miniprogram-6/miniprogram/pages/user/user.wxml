@@ -1,0 +1,18 @@
+<!--miniprogram/pages/user/user.wxml-->
+<view>
+  <view class="head">
+    <text>添加和查询联系人</text>
+  </view>
+  <view class="messageInput">
+    <input type="text" placeholder="请输入联系人" value="{{name}}" bindinput="nameChange" data-modal="{{name}}"/>
+    <input type="text" placeholder="请输入手机号码" value="{{tephone}}" 
+    bindinput="telphoneChange" data-modal="{{tephone}}"/>
+  </view>
+  <view class="btnGroup">
+    <button bindtap="addUser">添加</button>
+    <button bindtap="getUserList">查询信息</button>
+  </view>
+  <block class="messageList" wx:if="{{isShow}}">
+    <li wx:for="{{userList}}" class="list">{{item}}</li>
+  </block>
+</view>
